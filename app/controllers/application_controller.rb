@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless signed_in?
       flash[:danger] = 'Требуется логин'
-      # redirect_to :session_login
+      redirect_to :session_login
     end
   end
 end

@@ -14,17 +14,19 @@
 <nav class="navbar navbar-light" style="background-color: #ffe3ed;">
   <div class="container-fluid">
     <a class="navbar-brand" style="color: #ff0081" href="#">Главная страница</a>
-    <% if !signed_in? %>
-      <form class="d-flex">
-        <a class="nav-link" style="color: #ff0081" href="#">Войти</a>
-        <a class="nav-link" style="color: #ff0081" href="#">Зарегестрироваться</a>
-      </form>
-    <% else %>
-      <form class="d-flex">
-        <a class="nav-link" style="color: #ff0081" href="#">Изменить профиль</a>
-        <a class="nav-link" style="color: #ff0081" href="#">Моя страница</a>
-        <a class="nav-link" style="color: #ff0081" href="#">Добавить рецепт</a>
-      </form>
+    <% if !current_page?(session_login_path) && !current_page?(session_create_path) %>
+      <% if !signed_in? %>
+        <form class="d-flex">
+          <a class="nav-link" style="color: #ff0081" href=<%= session_login_path %>>Войти</a>
+          <a class="nav-link" style="color: #ff0081" href=<%= new_user_path %>>Зарегестрироваться</a>
+        </form>
+      <% else %>
+        <form class="d-flex">
+          <a class="nav-link" style="color: #ff0081" href="#">Изменить профиль</a>
+          <a class="nav-link" style="color: #ff0081" href="#">Моя страница</a>
+          <a class="nav-link" style="color: #ff0081" href="#">Добавить рецепт</a>
+        </form>
+      <% end %>
     <% end %>
   </div>
 </nav>

@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
-  def login
-  end
+  skip_before_action :require_login
+  def login; end
 
   def logout
     sign_out

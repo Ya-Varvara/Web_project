@@ -1,12 +1,7 @@
 class CookBookController < ApplicationController
+  skip_before_action :require_login, only: %i[main_page cook_page]
   def main_page
 
-  end
-
-  def login
-  end
-
-  def register
   end
 
   def user_page
