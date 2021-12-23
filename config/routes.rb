@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recipes
+  resources :users
   get 'cook_book/main_page'
   get 'cook_book/login'
   get 'cook_book/register'
