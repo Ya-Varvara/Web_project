@@ -13,7 +13,7 @@
 <body style="margin: 0">
 <nav class="navbar navbar-light" style="background-color: #ffe3ed;">
   <div class="container-fluid">
-    <a class="navbar-brand" style="color: #ff0081" href="#">Главная страница</a>
+    <a class="navbar-brand" style="color: #ff0081" href="/cook_book/main_page">Главная страница</a>
     <% if !current_page?(session_login_path) && !current_page?(session_create_path) %>
       <% if !signed_in? %>
         <form class="d-flex">
