@@ -1,5 +1,6 @@
 class CookBookController < ApplicationController
   def main_page
+
   end
 
   def login
@@ -12,5 +13,6 @@ class CookBookController < ApplicationController
   end
 
   def cook_page
+
   end
 end

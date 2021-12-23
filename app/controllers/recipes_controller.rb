@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
   def show
   end
 
-  # GET /recipes/new
+  # GET /recipes/new_old
   def new
     @recipe = Recipe.new
   end
@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
         format.html { redirect_to recipe_url(@recipe), notice: "Recipe was successfully created." }
         format.json { render :show, status: :created, location: @recipe }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new_old, status: :unprocessable_entity }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
     end

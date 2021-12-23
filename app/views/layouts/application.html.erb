@@ -14,7 +14,7 @@
 <nav class="navbar navbar-light" style="background-color: #ffe3ed;">
   <div class="container-fluid">
     <a class="navbar-brand" style="color: #ff0081" href="#">Главная страница</a>
-    <% if true %>
+    <% if !signed_in? %>
       <form class="d-flex">
         <a class="nav-link" style="color: #ff0081" href="#">Войти</a>
         <a class="nav-link" style="color: #ff0081" href="#">Зарегестрироваться</a>
