@@ -8,17 +8,15 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1 or /users/1.json
-  def show
-  end
+  def show; end
 
-  # GET /users/new_old
+  # GET /users/new
   def new
     @user = User.new
   end
 
   # GET /users/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /users or /users.json
   def create
