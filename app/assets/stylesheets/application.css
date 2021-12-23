@@ -14,10 +14,10 @@
  *= require_self
  */
 
-.footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.form-signin {
+    text-align: center;
     width: 100%;
-    height: 50px;
+    max-width: 540px;
+    padding: 15px;
+    margin: auto;
 }
