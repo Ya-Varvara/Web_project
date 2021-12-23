@@ -1,14 +1,15 @@
 <div class="container form-signin align-content-center justify-content-center">
   <h1 class="h3 fw-normal" style="margin-top: 70px; margin-bottom: 50px">Log in</h1>
-  <form class="row g-3 justify-content-center">
+  <%= form_with url: session_create_url, method: :post, local: true,class:'row g-3 justify-content-center' do |f| %>
     <div class="form-floating">
-      <input type="text" class="form-control" id="floatingInput" placeholder="username">
-      <label for="floatingInput" style="margin-left: 10px">Username</label>
+      <%= f.text_field :username, required: true, class: 'form-control',placeholder:'Username'%>
+      <%= f.label :username,'Username',style:"margin-left: 10px"%>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="password">
-      <label for="floatingPassword" style="margin-left: 10px">Password</label>
+      <%= f.password_field :password, required: true, class: 'form-control',placeholder:'Password'%>
+      <%= f.label :password,'Password',style:"margin-left: 10px"%>
     </div>
-    <button class="col-4 btn btn-lg btn-primary" type="submit">Submit</button>
-  </form>
+    <%= f.submit 'Submit', class:'col-4 btn btn-lg btn-primary'%>
+  <% end %>
+  <%= link_to 'Зарегистрироваться', new_user_path %>
 </div>
