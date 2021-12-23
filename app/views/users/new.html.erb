@@ -13,6 +13,7 @@
   <%# end %>
 
 <!--  <form class="row g-3">-->
+
     <%= form_with(model: @user, local: true, class: "row g-3") do |form| %>
       <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Please sign in</h1>
 
@@ -20,14 +21,12 @@
         <div class="col">
           <div class="form-floating">
             <%=form.text_field :f_name, class: "form-control", :placeholder => t("name")  %>
-<!--            <input type="text" class="form-control" id="floatingInput" placeholder="name">-->
             <label for="floatingInput" style="margin-left: 10px">First name</label>
           </div>
         </div>
         <div class="col">
           <div class="form-floating">
             <%=form.text_field :s_name, class: "form-control", :placeholder => t("surname")  %>
-<!--            <input type="text" class="form-control" id="floatingInput" placeholder="surname">-->
             <label for="floatingInput" style="margin-left: 10px">Second name</label>
           </div>
         </div>
@@ -36,7 +35,6 @@
       <div class="row g-2">
         <div class="form-floating">
           <%=form.text_field :username, class: "form-control", :placeholder => t("username")  %>
-<!--          <input type="text" class="form-control" id="floatingInput" placeholder="username">-->
           <label for="floatingInput" style="margin-left: 10px">Username</label>
         </div>
       </div>
@@ -44,7 +42,6 @@
       <div class="row g-2">
         <div class="form-floating">
           <%=form.email_field :email, class: "form-control", :placeholder => t("name@example.com")  %>
-<!--          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">-->
           <label for="floatingInput" style="margin-left: 10px">Email address</label>
         </div>
       </div>
@@ -53,14 +50,12 @@
         <div class="col">
           <div class="form-floating">
             <%=form.password_field :password, class: "form-control", :placeholder => t("password")  %>
-<!--            <input type="password" class="form-control" id="floatingInput" placeholder="password">-->
             <label for="floatingInput" style="margin-left: 10px">Password</label>
           </div>
         </div>
         <div class="col">
           <div class="form-floating">
             <%=form.password_field :password_confirmation, class: "form-control", :placeholder => t("password")  %>
-<!--            <input type="password" class="form-control" id="floatingInput" placeholder="password">-->
             <label for="floatingInput" style="margin-left: 10px">Confirm password</label>
           </div>
         </div>
@@ -69,7 +64,6 @@
       <div class="col-1"></div>
       <div class="col-10">
         <%= form.submit value: "Sign in", class: "w-100 btn btn-primary" %>
-<!--        <button type="submit" class="w-100 btn btn-primary" style="margin-top: 20px">Sign in</button>-->
       </div>
 
       <div class="col-1"></div>

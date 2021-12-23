@@ -21,6 +21,13 @@
     padding: 15px;
     margin: auto;
 }
+.form-recipe {
+    text-align: center;
+    width: 100%;
+    max-width: 720px;
+    padding: 15px;
+    margin: auto;
+}
 a:hover {
     color: unset;
     background-color: inherit;

@@ -1,5 +1,62 @@
-<h1>New Recipe</h1>
+<div class="form-recipe">
+  <%= form_with(model: @recipe, local: true, class: "row g-3") do |form| %>
 
-<%= render 'form', recipe: @recipe %>
+    <%# if recipe.errors.any? %>
+    <!--      <div id="error_explanation">-->
+    <!--        <h2><%#= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>-->
 
-<%= link_to 'Back', recipes_path %>
+    <!--        <ul>-->
+    <%# recipe.errors.each do |error| %>
+    <!--            <li><%#= error.full_message %></li>-->
+    <%# end %>
+    <!--        </ul>-->
+    <!--      </div>-->
+    <%# end %>
+
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Please fill all gaps</h1>
+
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_field :name, class: "form-control", :placeholder => t("name") %>
+        <label for="floatingInput" style="margin-left: 10px">Name</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <h6>Level</h6>
+      <div class="form-check form-check-inline">
+        <%= form.radio_button :level, class: "form-check-input", :checked => true, value: 1,  id: "inlineRadio1" %>
+        <label class="form-check-label" for="inlineRadio1">1</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= form.radio_button :level, class: "form-check-input", value: 2, id: "inlineRadio2" %>
+        <label class="form-check-label" for="inlineRadio2">2</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= form.radio_button :level, class: "form-check-input", value: 3, id: "inlineRadio3" %>
+        <label class="form-check-label" for="inlineRadio3">3</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_field :time, class: "form-control", :placeholder => t("time") %>
+        <label for="floatingInput" style="margin-left: 10px">Time of cooking (min)</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_area :ingred, class: "form-control", :placeholder => t("ingredients"), rows: 3 %>
+        <label for="recipe_ingred" style="margin-left: 10px ">Ingredients</label>
+      </div>
+    </div>
+
+    <div class="row g-2">
+      <div class="form-floating">
+        <%= form.text_area :descrip, class: "form-control", :placeholder => t("description"), rows: 5 %>
+        <label for="recipe_descrip" style="margin-left: 10px ">Description</label>
+      </div>
+    </div>
+  <% end %>
+</div>
