@@ -22,9 +22,10 @@
         </form>
       <% else %>
         <form class="d-flex">
-          <a class="nav-link" style="color: #ff0081" href="#" >Изменить профиль</a>
-          <a class="nav-link" style="color: #ff0081" href="#">Моя страница</a>
+
+          <a class="nav-link" style="color: #ff0081" href="/users/<%=current_user.id%>">Моя страница</a>
           <a class="nav-link" style="color: #ff0081" href=<%= new_recipe_path %> >Добавить рецепт</a>
+          <a class="nav-link" style="color: #ff0081" href=<%=session_logout_path%> >Выйти</a>
         </form>
       <% end %>
     <% end %>
@@ -44,23 +45,9 @@
     </a>
     <span class="text-muted">© 2021 Company, Inc</span>
   </div>
-
-  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-    <li class="ms-3"><a class="text-muted" href="#">
-      <svg class="bi" width="24" height="24">
-        <use xlink:href="#twitter"></use>
-      </svg>
-    </a></li>
-    <li class="ms-3"><a class="text-muted" href="#">
-      <svg class="bi" width="24" height="24">
-        <use xlink:href="#instagram"></use>
-      </svg>
-    </a></li>
-    <li class="ms-3"><a class="text-muted" href="#">
-      <svg class="bi" width="24" height="24">
-        <use xlink:href="#facebook"></use>
-      </svg>
-    </a></li>
+    <a class="text-muted" href="https://instagram.com/_varya_ya?utm_medium=copy_link">
+      <img class="bi" width="24" height="24" src="https://img.icons8.com/fluency/344/instagram-new.png" alt="..."/>
+    </a>
   </ul>
 </div>
 </body>

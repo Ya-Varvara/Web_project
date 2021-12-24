@@ -4,7 +4,7 @@ class SessionController < ApplicationController
 
   def logout
     sign_out
-    redirect_to session_login_path
+    redirect_to root_path
   end
 
   def create

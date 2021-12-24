@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
-  
+  skip_before_action :require_login, only: %i[ show ]
 
   # GET /recipes or /recipes.json
   def index
@@ -50,7 +50,7 @@ class RecipesController < ApplicationController
     @recipe.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to user_url(current_user), notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

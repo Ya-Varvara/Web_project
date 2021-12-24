@@ -6,7 +6,7 @@
     <div>Рецетов нет :(</div>
   <% else %>
     <% @recipes.each do |pair_recipe| %>
-      <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-inline: 5% ">
+        <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-inline: 5% ">
         <% pair_recipe.each do |recipe| %>
         <div class="col">
           <div class="card mb-3">
@@ -16,7 +16,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title"><%=recipe[:name] %></h5>
+                  <a href="/recipes/<%=recipe[:id] %>"><%=recipe[:name]%></a>
                   <p class="card-text"><%= recipe[:time]%></p>
                   <p class="card-text"><small class="text-muted"><%=recipe[:username] %></small></p>
                 </div>
