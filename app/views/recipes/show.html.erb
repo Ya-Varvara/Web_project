@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row" style="margin-bottom: 40px; margin-top: 40px">
+    <h2> <%= @recipe.name %> </h2>
+    <% if @recipe.user_id == current_user.id %>
+    <span>
+      <%= link_to 'Доготовить', edit_recipe_path(@recipe) %>
+      <%= link_to 'Сожрать', @recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
+    <% end %>
+  </div>
+
+  <div class="row justify-content-between" style="justify-content: center">
+    <div class="col-4">
+      <div>
+        <img class="img-fluid rounded" src="<%= @recipe.image %>"
+             style="margin-bottom: 40px">
+      </div>
+      <div>
+        <p>
+          Сложность блюда: <%= @recipe.level %> <br/>
+          Время приготовления: <%= @recipe.time %> мин. <br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-7">
+      <div>
+        <p>Список ингридиентов: <%= @recipe.ingred %></p>
+      </div>
+
+      <div>
+        <p>
+          Инструкция
+        </p>
+        <%= @recipe.descrip %>
+      </div>
+    </div>
+  </div>
+</div>

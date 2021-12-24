@@ -1,3 +1,33 @@
-<div class="">
-
+<div>
+  <h3 style="margin: 20px">Книга рецептов</h3>
+</div>
+<div class="container-md">
+  <% if @recipes.empty? %>
+    <div>Рецетов нет :(</div>
+  <% else %>
+    <% @recipes.each do |pair_recipe| %>
+        <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-inline: 5% ">
+        <% pair_recipe.each do |recipe| %>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%=recipe[:image]%>" class="img-fluid rounded-start" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <a href="/recipes/<%=recipe[:id] %>"><%=recipe[:name]%></a>
+                  <p class="card-text"><%= recipe[:time]%></p>
+                  <p class="card-text"><small class="text-muted"><%=recipe[:username] %></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% end %>
+    <!--здесь foreach для самих рецептов закончился-->
+    </div>
+  <% end %>
+  <!--здесь будет foreach для строк (2 рецепта) закончился-->
+  <% end %>
 </div>
