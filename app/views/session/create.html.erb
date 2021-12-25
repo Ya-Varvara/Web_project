@@ -1,18 +1,18 @@
 <div class="form-signin">
   <form class="row g-3">
-    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px"><%=t('page.fill_gaps') %></h1>
 
     <div class="row g-2">
       <div class="col">
         <div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" placeholder="name">
-          <label for="floatingInput" style="margin-left: 10px">First name</label>
+          <label for="floatingInput" style="margin-left: 10px"><%=t('user.f_name') %></label>
         </div>
       </div>
       <div class="col">
         <div class="form-floating">
           <input type="text" class="form-control" id="floatingInput" placeholder="surname">
-          <label for="floatingInput" style="margin-left: 10px">Second name</label>
+          <label for="floatingInput" style="margin-left: 10px"><%=t('user.s_name') %></label>
         </div>
       </div>
     </div>
@@ -20,14 +20,14 @@
     <div class="row g-2">
       <div class="form-floating">
         <input type="text" class="form-control" id="floatingInput" placeholder="username">
-        <label for="floatingInput" style="margin-left: 10px">Username</label>
+        <label for="floatingInput" style="margin-left: 10px"><%=t('user.username') %></label>
       </div>
     </div>
 
     <div class="row g-2">
       <div class="form-floating">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput" style="margin-left: 10px">Email address</label>
+        <label for="floatingInput" style="margin-left: 10px"><%=t('user.email') %></label>
       </div>
     </div>
 
@@ -35,20 +35,20 @@
       <div class="col">
         <div class="form-floating">
           <input type="password" class="form-control" id="floatingInput" placeholder="password">
-          <label for="floatingInput" style="margin-left: 10px">Password</label>
+          <label for="floatingInput" style="margin-left: 10px"><%=t('user.password') %></label>
         </div>
       </div>
       <div class="col">
         <div class="form-floating">
           <input type="password" class="form-control" id="floatingInput" placeholder="password">
-          <label for="floatingInput" style="margin-left: 10px">Confirm password</label>
+          <label for="floatingInput" style="margin-left: 10px"><%=t('user.conf_password') %></label>
         </div>
       </div>
     </div>
 
     <div class="col-1"></div>
     <div class="col-10">
-      <button type="submit" class="w-100 btn btn-primary" style="margin-top: 20px">Sign in</button>
+      <button type="submit" class="w-100 btn btn-primary" style="margin-top: 20px"><%=t('register') %></button>
     </div>
 
     <div class="col-1"></div>

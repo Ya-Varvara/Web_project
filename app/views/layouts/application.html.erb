@@ -11,21 +11,21 @@
 </head>
 
 <body style="margin: 0">
-<nav class="navbar navbar-light" style="background-color: #ffe3ed;">
+<nav class="navbar navbar-light" style="background-color: #ffe3ed; margin-bottom: 20px">
   <div class="container-fluid">
-    <a class="navbar-brand" style="color: #ff0081" href=<%= root_path %>>Главная страница</a>
+    <a class="navbar-brand" style="color: #ff0081" href=<%= root_path %>><%=t('page.home')%></a>
     <% if !current_page?(session_login_path) && !current_page?(session_create_path) %>
       <% if !signed_in? %>
         <form class="d-flex">
-          <a class="nav-link" style="color: #ff0081" href=<%= session_login_path %>>Войти</a>
-          <a class="nav-link" style="color: #ff0081" href=<%= new_user_path %>>Зарегестрироваться</a>
+          <a class="nav-link" style="color: #ff0081" href=<%= session_login_path %>><%=t('login')%></a>
+          <a class="nav-link" style="color: #ff0081" href=<%= new_user_path %>><%=t('register')%></a>
         </form>
       <% else %>
         <form class="d-flex">
 
-          <a class="nav-link" style="color: #ff0081" href="/users/<%=current_user.id%>">Моя страница</a>
-          <a class="nav-link" style="color: #ff0081" href=<%= new_recipe_path %> >Добавить рецепт</a>
-          <a class="nav-link" style="color: #ff0081" href=<%=session_logout_path%> >Выйти</a>
+          <a class="nav-link" style="color: #ff0081" href="/users/<%=current_user.id%>"><%=t('page.my_page')%></a>
+          <a class="nav-link" style="color: #ff0081" href=<%= new_recipe_path %> ><%=t('page.add_recipe')%></a>
+          <a class="nav-link" style="color: #ff0081" href=<%=session_logout_path%> ><%=t('logout')%></a>
         </form>
       <% end %>
     <% end %>
@@ -36,16 +36,16 @@
 <%= yield %>
 
 
-<div class="footer d-flex flex-wrap justify-content-between align-items-center py-3 border-top fixed-bottom" style="background-color: #ffe3ed">
+<div class="footer d-flex flex-wrap justify-content-between align-items-center py-3 border-top" style="background-color: #ffe3ed; margin-top: 30px">
   <div class="col-md-4 d-flex align-items-center">
     <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
       <svg class="bi" width="30" height="24">
         <use xlink:href="#bootstrap"></use>
       </svg>
     </a>
-    <span class="text-muted">© 2021 Company, Inc</span>
+    <span class="text-muted">© Yakovleva Varvara, IU6-35B</span>
   </div>
-    <a class="text-muted" href="https://instagram.com/_varya_ya?utm_medium=copy_link">
+    <a class="text-muted" href="https://instagram.com/_varya_ya?utm_medium=copy_link" style="margin-right: 20px">
       <img class="bi" width="24" height="24" src="https://img.icons8.com/fluency/344/instagram-new.png" alt="..."/>
     </a>
   </ul>

@@ -1,28 +1,28 @@
 <div class="form-recipe">
   <%= form_with(model: @recipe, local: true, class: "row g-3") do |form| %>
 
-    <%# if recipe.errors.any? %>
-    <!--      <div id="error_explanation">-->
-    <!--        <h2><%#= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>-->
+    <% if @recipe.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
-    <!--        <ul>-->
-    <%# recipe.errors.each do |error| %>
-    <!--            <li><%#= error.full_message %></li>-->
-    <%# end %>
-    <!--        </ul>-->
-    <!--      </div>-->
-    <%# end %>
+            <ul>
+    <% @recipe.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+    <% end %>
+            </ul>
+          </div>
+    <% end %>
 
-    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Please fill all gaps</h1>
+    <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px"><%=t('page.fill_gaps') %></h1>
 
     <div class="row g-2">
       <div class="form-floating">
         <%= form.text_field :name, class: "form-control", :placeholder => t("name") %>
-        <label for="floatingInput" style="margin-left: 10px">Name</label>
+        <label for="floatingInput" style="margin-left: 10px"><%=t('recipe.name') %></label>
       </div>
     </div>
     <div class="row g-2">
-      <h5>Level</h5>
+      <h5><%=t('recipe.level') %></h5>
       <div class="col">
         <div class="form-check form-check-inline">
           <%= form.radio_button :level, 1, :checked => true, class: "form-check-input" %>
@@ -40,35 +40,35 @@
     </div>
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_field :time, class: "form-control", :placeholder => t("time") %>
-        <label for="floatingInput" style="margin-left: 10px">Time of cooking (min)</label>
+        <%= form.text_field :time, class: "form-control", :placeholder => t('recipe.time') %>
+        <label for="floatingInput" style="margin-left: 10px"><%=t('recipe.time') %></label>
       </div>
     </div>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_area :ingred, class: "form-control", :placeholder => t("ingredients"), rows: 3 %>
-        <label for="recipe_ingred" style="margin-left: 10px ">Ingredients</label>
+        <%= form.text_area :ingred, class: "form-control", :placeholder => t('recipe.ingred'), rows: 5 %>
+        <label for="recipe_ingred" style="margin-left: 10px "><%=t('recipe.ingred') %></label>
       </div>
     </div>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_area :descrip, class: "form-control", :placeholder => t("description"), rows: 5 %>
-        <label for="recipe_descrip" style="margin-left: 10px ">Description</label>
+        <%= form.text_area :descrip, class: "form-control", :placeholder => t('recipe.descrip'), rows: 7 %>
+        <label for="recipe_descrip" style="margin-left: 10px "><%=t('recipe.descrip') %></label>
       </div>
     </div>
 
     <div class="row g-2">
       <div class="form-floating">
-        <%= form.text_field :image, class: "form-control", :placeholder => t("image") %>
-        <label for="floatingInput" style="margin-left: 10px">URL of image</label>
+        <%= form.text_field :image, class: "form-control", :placeholder => t('recipe.url') %>
+        <label for="floatingInput" style="margin-left: 10px"><%=t('recipe.url') %></label>
       </div>
     </div>
 
     <div class="col-1"></div>
-    <div class="col-10">
-      <%= form.submit value: "Add recipe", class: "w-100 btn btn-primary" %>
+    <div class="col-10" style="margin-bottom: 40px; margin-top: 20px">
+      <%= form.submit value: t('page.add_recipe'), class: "w-100 btn btn-primary" %>
     </div>
     <div class="col-1"></div>
 

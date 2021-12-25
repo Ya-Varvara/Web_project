@@ -1,48 +1,48 @@
 <div class="form-signin">
 
-  <%# if user.errors.any? %>
-<!--    <div id="error_explanation">-->
-<!--      <h2><%#= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>-->
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-<!--      <ul>-->
-        <%# user.errors.each do |error| %>
-<!--          <li><%#= error.full_message %></li>-->
-        <%# end %>
-<!--      </ul>-->
-<!--    </div>-->
-  <%# end %>
+      <ul>
+        <% @user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
 <!--  <form class="row g-3">-->
 
     <%= form_with(model: @user, local: true, class: "row g-3") do |form| %>
-      <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px">Please sign in</h1>
+      <h1 class="h3 mb-3 fw-normal" style="margin-top: 50px"><%=t('page.fill_gaps') %></h1>
 
       <div class="row g-2">
         <div class="col">
           <div class="form-floating">
-            <%=form.text_field :f_name, class: "form-control", :placeholder => t("name")  %>
-            <label for="floatingInput" style="margin-left: 10px">First name</label>
+            <%=form.text_field :f_name, class: "form-control", :placeholder => t('user.f_name')  %>
+            <label for="floatingInput" style="margin-left: 10px"><%=t('user.f_name') %></label>
           </div>
         </div>
         <div class="col">
           <div class="form-floating">
-            <%=form.text_field :s_name, class: "form-control", :placeholder => t("surname")  %>
-            <label for="floatingInput" style="margin-left: 10px">Second name</label>
+            <%=form.text_field :s_name, class: "form-control", :placeholder => t('user.s_name')  %>
+            <label for="floatingInput" style="margin-left: 10px"><%=t('user.s_name') %></label>
           </div>
         </div>
       </div>
 
       <div class="row g-2">
         <div class="form-floating">
-          <%=form.text_field :username, class: "form-control", :placeholder => t("username")  %>
-          <label for="floatingInput" style="margin-left: 10px">Username</label>
+          <%=form.text_field :username, class: "form-control", :placeholder => t('user.username')  %>
+          <label for="floatingInput" style="margin-left: 10px"><%=t('user.username') %></label>
         </div>
       </div>
 
       <div class="row g-2">
         <div class="form-floating">
-          <%=form.email_field :email, class: "form-control", :placeholder => t("name@example.com")  %>
-          <label for="floatingInput" style="margin-left: 10px">Email address</label>
+          <%=form.email_field :email, class: "form-control", :placeholder => t('user.email')  %>
+          <label for="floatingInput" style="margin-left: 10px"><%=t('user.email') %></label>
         </div>
       </div>
 
@@ -50,20 +50,20 @@
         <div class="col">
           <div class="form-floating">
             <%=form.password_field :password, class: "form-control", :placeholder => t("password")  %>
-            <label for="floatingInput" style="margin-left: 10px">Password</label>
+            <label for="floatingInput" style="margin-left: 10px"><%=t('user.password') %></label>
           </div>
         </div>
         <div class="col">
           <div class="form-floating">
             <%=form.password_field :password_confirmation, class: "form-control", :placeholder => t("password")  %>
-            <label for="floatingInput" style="margin-left: 10px">Confirm password</label>
+            <label for="floatingInput" style="margin-left: 10px"><%=t('user.conf_password') %></label>
           </div>
         </div>
       </div>
 
       <div class="col-1"></div>
       <div class="col-10">
-        <%= form.submit value: "Sign in", class: "w-100 btn btn-primary" %>
+        <%= form.submit value: t('register'), class: "w-100 btn btn-primary" %>
       </div>
 
       <div class="col-1"></div>

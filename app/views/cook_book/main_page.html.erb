@@ -1,9 +1,9 @@
 <div>
-  <h3 style="margin: 20px">Книга рецептов</h3>
+  <h3 style="margin: 20px"><%=t('page.cook_book') %></h3>
 </div>
 <div class="container-md">
   <% if @recipes.empty? %>
-    <div>Рецетов нет :(</div>
+    <div><%=t('page.no_recipes') %></div>
   <% else %>
     <% @recipes.each do |pair_recipe| %>
         <div class="row row-cols-1 row-cols-md-2 g-4" style="margin-inline: 5% ">
@@ -16,8 +16,9 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <a href="/recipes/<%=recipe[:id] %>"><%=recipe[:name]%></a>
-                  <p class="card-text"><%= recipe[:time]%></p>
+                  <a href="/recipes/<%=recipe[:id] %>"><h4><%=recipe[:name]%></h4></a>
+                  <p class="card-text"><%= t('recipe.level') %>: <%=recipe[:level]%><br/>
+                  <%= t('recipe.time') %>: <%= recipe[:time]%> мин</p>
                   <p class="card-text"><small class="text-muted"><%=recipe[:username] %></small></p>
                 </div>
               </div>
@@ -25,9 +26,7 @@
           </div>
         </div>
     <% end %>
-    <!--здесь foreach для самих рецептов закончился-->
     </div>
   <% end %>
-  <!--здесь будет foreach для строк (2 рецепта) закончился-->
   <% end %>
 </div>
