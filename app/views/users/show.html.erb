@@ -26,9 +26,10 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <a href="/recipes/<%= recipe[:id] %>"><%= recipe[:name] %></a>
-                <p class="card-text"><%= recipe[:time] %></p>
-                <p class="card-text"><small class="text-muted"><%= @user.username %></small></p>
+                <a href="/recipes/<%=recipe[:id] %>"><h4><%=recipe[:name]%></h4></a>
+                <p class="card-text"><%= t('recipe.level') %>: <%=recipe[:level]%><br/>
+                  <%= t('recipe.time') %>: <%= recipe[:time]%> мин</p>
+                <p class="card-text"><small class="text-muted"><%=recipe[:username] %></small></p>
               </div>
             </div>
           </div>
