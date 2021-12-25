@@ -5,14 +5,15 @@ class SessionControllerTest < ActionDispatch::IntegrationTest
     get session_login_url
     assert_response :success
   end
-
-  test "should get logout" do
-    get session_logout_url
-    assert_response :success
-  end
+  #TODO Не уверен что надо
+  #
+  # test "should get logout" do
+  #   get session_logout_url
+  #   assert_response :success
+  # end
 
   test "should get create" do
-    get session_create_url
-    assert_response :success
+    post session_create_url
+    assert_redirected_to controller: :session, action: :login
   end
 end

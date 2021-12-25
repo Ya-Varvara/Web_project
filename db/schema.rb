@@ -3,7 +3,7 @@
 # incrementally modify your database, and then regenerate this schema definition.
 #
 # This file is the source Rails uses to define your schema when running `bin/rails
-# db:schema:load`. When creating a new_old database, `bin/rails db:schema:load` tends to
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2021_12_23_155102) do
     t.text "descrip"
     t.integer "time"
     t.string "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", Time.current
+    t.datetime "updated_at", Time.current
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2021_12_23_155102) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", Time.current
+    t.datetime "updated_at", Time.current
   end
 
   add_foreign_key "recipes", "users"

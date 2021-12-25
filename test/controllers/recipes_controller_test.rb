@@ -1,6 +1,7 @@
 require "test_helper"
 
 class RecipesControllerTest < ActionDispatch::IntegrationTest
+  #TODO Добавить логин в пользователя
   setup do
     @recipe = recipes(:one)
   end
@@ -15,6 +16,7 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  #TODO Сделать генерацию при помощи FAKER
   test "should create recipe" do
     assert_difference('Recipe.count') do
       post recipes_url, params: { recipe: { descrip: @recipe.descrip, image: @recipe.image, ingred: @recipe.ingred, level: @recipe.level, name: @recipe.name, time: @recipe.time } }
@@ -33,12 +35,14 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  #TODO Сделать генерацию при помощи FAKER
   test "should update recipe" do
     patch recipe_url(@recipe), params: { recipe: { descrip: @recipe.descrip, image: @recipe.image, ingred: @recipe.ingred, level: @recipe.level, name: @recipe.name, time: @recipe.time } }
     assert_redirected_to recipe_url(@recipe)
   end
 
   test "should destroy recipe" do
+    p recipe_url(@recipe)
     assert_difference('Recipe.count', -1) do
       delete recipe_url(@recipe)
     end
