@@ -17,6 +17,7 @@ en:
     user_head: 'User page'
     no_recipes: 'There is not any recipe. Login and add some'
     fill_gaps: 'Please fill all gaps'
+    edit_gaps: 'Please make changes to some fields'
 
   user:
     username: 'Nickname'
@@ -26,6 +27,7 @@ en:
     f_name: 'First name'
     s_name: 'Last name'
     email: 'Email'
+    author: 'Author'
 
   recipe:
     name: 'Recipe name'
@@ -35,6 +37,8 @@ en:
     time: 'Time of cooking'
     url: 'URL of image'
 
+  error:
+    empty_gaps: 'The fields must be filled in with correct data!'
 
 
 

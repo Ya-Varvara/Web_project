@@ -19,7 +19,7 @@
                   <a href="/recipes/<%=recipe[:id] %>"><h4><%=recipe[:name]%></h4></a>
                   <p class="card-text"><%= t('recipe.level') %>: <%=recipe[:level]%><br/>
                   <%= t('recipe.time') %>: <%= recipe[:time]%> мин</p>
-                  <p class="card-text"><small class="text-muted"><%=recipe[:username] %></small></p>
+                  <p class="card-text"><small class="text-muted"><%=t('user.author') %>: <%=recipe[:username] %></small></p>
                 </div>
               </div>
             </div>
