@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 2021_12_23_155102) do
     t.text "descrip"
     t.integer "time"
     t.string "image"
-    t.datetime "created_at", Time.current
-    t.datetime "updated_at", Time.current
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 2021_12_23_155102) do
     t.string "username"
     t.string "email"
     t.string "password_digest"
-    t.datetime "created_at", Time.current
-    t.datetime "updated_at", Time.current
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "recipes", "users"

@@ -5,13 +5,13 @@ one:
   f_name: MyString
   s_name: MyString
   username: MyString
-  email: MyString
+  email: MyString@gmail.com
   password_digest: MyString
 
 two:
   id: 2
   f_name: MyString
   s_name: MyString
-  username: MyString
-  email: MyString
+  username: MyString2
+  email: MyString@gmail.com
   password_digest: MyString

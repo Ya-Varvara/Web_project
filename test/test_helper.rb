@@ -1,6 +1,7 @@
 ENV['RAILS_ENV'] ||= 'test'
 require_relative "../config/environment"
 require "rails/test_help"
+# require '../../Cook_book/app/helpers/session_helper'
 
 class ActiveSupport::TestCase
   # Run tests in parallel with specified workers
@@ -10,4 +11,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def sign_in(user)
+    @cookies.signed[:user_id] = { value: user.id, expires: 1.hour }
+    # self.current_user = user
+  end
 end
