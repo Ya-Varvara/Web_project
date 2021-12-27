@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'session/login'
   get 'session/logout'
@@ -5,10 +7,6 @@ Rails.application.routes.draw do
   resources :recipes
   resources :users
   get 'cook_book/main_page'
-  get 'cook_book/login'
-  get 'cook_book/register'
-  get 'cook_book/user_page'
-  get 'cook_book/cook_page'
   root to: 'cook_book#main_page'
 
   get '/:locale' => 'cook_book#main_page'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SessionController < ApplicationController
   skip_before_action :require_login
   def login; end
@@ -14,6 +16,7 @@ class SessionController < ApplicationController
       p 'Login'
       sign_in user
       redirect_to root_path
+      p signed_in?
     else
       p 'Redirected'
       flash.now[:danger] = 'Неверный логин или пароль'
