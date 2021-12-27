@@ -14,6 +14,7 @@ class SessionController < ApplicationController
       p 'Login'
       sign_in user
       redirect_to root_path
+      p signed_in?
     else
       p 'Redirected'
       flash.now[:danger] = 'Неверный логин или пароль'

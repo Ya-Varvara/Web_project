@@ -1,11 +1,10 @@
 require 'test_helper'
 
-
 class RecipesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+  include SessionHelper
   #TODO Добавить логин в пользователя
   setup do
-    get session_login_url
-    sign_in(users(:one))
     @recipe = recipes(:one)
   end
 
@@ -15,16 +14,21 @@ class RecipesControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test "should get new" do
+    p User.count
+    password = Faker::Lorem.word
+    user = User.create(f_name: Faker::Lorem.word, s_name: Faker::Lorem.word, email: '123@gmail.com', username: Faker::Lorem.word, password: password, password_confirmation: password)
+    # post session_create_url, params: { username: user.username, password: password }
+    sign_in(User.last)
+    p User.count
     get new_recipe_url
     assert_response :success
   end
 
   #TODO Сделать генерацию при помощи FAKER
   test "should create recipe" do
-    assert_difference('Recipe.count') do
+    assert_difference('Recipe.count', 1) do
       post recipes_url, params: { recipe: { descrip: @recipe.descrip, image: @recipe.image, ingred: @recipe.ingred, level: @recipe.level, name: @recipe.name, time: @recipe.time } }
     end
-
     assert_redirected_to recipe_url(Recipe.last)
   end
 

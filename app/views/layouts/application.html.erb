@@ -15,6 +15,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" style="color: #ff0081" href=<%= root_path %>><%=t('page.home')%></a>
     <% if !current_page?(session_login_path) && !current_page?(session_create_path) %>
+      <% p signed_in? %>
       <% if !signed_in? %>
         <form class="d-flex">
           <a class="nav-link" style="color: #ff0081" href=<%= session_login_path %>><%=t('login')%></a>
@@ -22,7 +23,6 @@
         </form>
       <% else %>
         <form class="d-flex">
-
           <a class="nav-link" style="color: #ff0081" href="/users/<%=current_user.id%>"><%=t('page.my_page')%></a>
           <a class="nav-link" style="color: #ff0081" href=<%= new_recipe_path %> ><%=t('page.add_recipe')%></a>
           <a class="nav-link" style="color: #ff0081" href=<%=session_logout_path%> ><%=t('logout')%></a>

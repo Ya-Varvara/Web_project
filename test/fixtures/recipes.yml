@@ -7,7 +7,7 @@ one:
   descrip: MyText
   time: 1
   image: MyString
-  user_id: 2
+  user_id: 1
 
 two:
   name: MyString
@@ -16,4 +16,4 @@ two:
   descrip: MyText
   time: 1
   image: MyString
-  user_id: 2
+  user_id: 1

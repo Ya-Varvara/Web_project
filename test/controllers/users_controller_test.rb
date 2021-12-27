@@ -17,7 +17,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should update user" do
     get edit_user_path(@user), params: { user: { f_name: Faker::Lorem.word, s_name: Faker::Lorem.word, username: Faker::Lorem.word } }
-    #TODO Я бы пересмотрел этот Assert
     assert_response :success
   end
 

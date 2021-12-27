@@ -11,8 +11,5 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-  def sign_in(user)
-    @cookies.signed[:user_id] = { value: user.id, expires: 1.hour }
-    # self.current_user = user
-  end
 end
+
