@@ -1,4 +1,6 @@
-require_relative  '../test_helper'
+# frozen_string_literal: true
+
+require_relative '../test_helper'
 
 class SessionFlowTest < ActionDispatch::IntegrationTest
   test 'user with incorrect credentials will be redirected to login page' do
@@ -16,8 +18,10 @@ class SessionFlowTest < ActionDispatch::IntegrationTest
   test 'user will see the root after signing up' do
     username = Faker::Lorem.word
     password = Faker::Lorem.word
-    post users_url, params: { user: { username: username, password: password, password_confirmation: password } }
-    assert_redirected_to User.last
+    post users_path,
+         params: { user: { f_name: Faker::Lorem.word, s_name: Faker::Lorem.word, username: username, email: '123@gmail.com',
+                           password: password, password_confirmation: password } }
+    assert_redirected_to user_url(User.last)
   end
 
   test 'user can logout' do

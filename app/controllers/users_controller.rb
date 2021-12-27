@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_user, only: %i[show edit update destroy]
   skip_before_action :require_login
 
   # GET /users or /users.json
@@ -9,7 +11,9 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    @user_recipes = Recipe.where(user_id:@user.id).all.map{ |elem| { id: elem.id, name: elem.name, ingred: elem.ingred, descrip: elem.descrip,image: elem.image, time: elem.time } }
+    @user_recipes = Recipe.where(user_id: @user.id).all.map do |elem|
+      { id: elem.id, name: elem.name, ingred: elem.ingred, descrip: elem.descrip, image: elem.image, time: elem.time }
+    end
   end
 
   # GET /users/new

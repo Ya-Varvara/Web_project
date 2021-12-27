@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,30 +12,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_23_155102) do
-
-  create_table "recipes", force: :cascade do |t|
-    t.string "name"
-    t.integer "level"
-    t.text "ingred"
-    t.text "descrip"
-    t.integer "time"
-    t.string "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_recipes_on_user_id"
+ActiveRecord::Schema.define(version: 20_211_223_155_102) do
+  create_table 'recipes', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'level'
+    t.text 'ingred'
+    t.text 'descrip'
+    t.integer 'time'
+    t.string 'image'
+    t.datetime 'created_at', Time.current
+    t.datetime 'updated_at', Time.current
+    t.integer 'user_id', null: false
+    t.index ['user_id'], name: 'index_recipes_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "f_name"
-    t.string "s_name"
-    t.string "username"
-    t.string "email"
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'f_name'
+    t.string 's_name'
+    t.string 'username'
+    t.string 'email'
+    t.string 'password_digest'
+    t.datetime 'created_at', Time.current
+    t.datetime 'updated_at', Time.current
   end
 
-  add_foreign_key "recipes", "users"
+  add_foreign_key 'recipes', 'users'
 end
